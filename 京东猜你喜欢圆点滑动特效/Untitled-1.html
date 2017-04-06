@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery-2.1.1.js"></script>
+<style>
+
+*{margin:0;padding:0}
+.box1{width:1200px;height:200px;border:1px solid #CCC}
+.box2{width:1200px;height:600px;border:1px solid #CCC;margin-top:10px; position:relative}
+img{height:200px;width:100%}
+.box21{width:150px;height:8px;position:absolute;top:-5px;display:none}
+.xian{width:120px;height:1px;background:#0F0;float:left;margin-top:3px;}
+.yd{width:8px;height:8px; border-radius:6px;background:#0F0;float:left}
+</style>
+</head>
+
+<body>
+<div class="box1">
+	<img src="123.png">
+</div>
+<div class="box2">
+	<img src="123.png">	
+    <div class="box21">
+    	<div class="xian"></div>
+        <div class="yd"></div>
+    </div>
+</div>
+<script>
+//scroll() window窗口和垂直滚动事件
+$(window).scroll(function(){
+	//获取相对窗口的垂直距离
+	var top=$(this).scrollTop();
+	if(top>=100){
+		$(".box21").css("display","block").stop().animate({
+		left:1076,
+		
+		},2000)}
+	else{
+		$(".box21").css("display","none").stop().animate({
+		left:0,}
+		)
+		}
+	})
+	
+
+
+
+</script>
+</body>
+</html>

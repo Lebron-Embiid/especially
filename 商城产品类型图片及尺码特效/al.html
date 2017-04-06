@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery.js"></script>
+
+<style>
+*{margin:0;padding:0}
+.box{width:100%;height:300px;background:#f7f7f7;border:1px solid #f7f7f7}
+.box1{width:120px;height:20px;margin-top:10px;margin-left:20px}
+.box2{width:120px;height:20px;margin-top:10px;margin-left:20px;position:relative}
+ul{list-style:none}
+.box2 ul li{float:left;position:absolute;top:0;left:0;display:none}
+.box3{width:700px;height:50px;}
+.box3 span,.box4 span{float:left;margin-top:20px;margin-left:20px;}
+.box3 ul li{width:100px;height:100px;float:left;border:1px solid #ccc;margin-left:10px;margin-top:20px;position:relative}
+.box3 ul li img{width:100%;height:100%;position:relative}
+.box4{width:240px;height:40px;margin-top:20px}
+.box4 ul li{float:left;width:30px;line-height:20px;border:1px solid #ccc;text-align:center;margin-top:10px;margin-left:10px;position:relative}
+.sj{background:url(sys_item_selected.gif) no-repeat 20px 10px;position:absolute;bottom:0;right:0;}
+.imgs{display:none;position:absolute;bottom:18px;left:90px;width:10px;height:10px}
+</style>
+
+</head>
+
+<body>
+<div class="box">
+	<div class="box1">市场价：<del>￥12.00</del></div>
+    <div class="box2">
+    	<ul>
+        	<li style="display:block">本网价：￥6.60</li>
+            <li>本网价：￥7.60</li>
+            <li>本网价：￥8.60</li>
+            <li>本网价：￥9.60</li>
+        </ul>
+    </div>
+    <div class="box3">
+    	<span>颜色</span>
+    	<ul>
+        	<li><img src="1.png"><img  class="imgs" src="sys_item_selected.gif" style="width:10px;height:10px"></li>
+        	<li><img src="2.png"><img class="imgs" src="sys_item_selected.gif" style="width:10px;height:10px"></li>
+            <li><img src="3.png"><img class="imgs" src="sys_item_selected.gif" style="width:10px;height:10px"></li>
+        </ul>
+    </div>
+    <div style="clear:both"></div>
+    <div class="box4">
+    	<span style="display:inline-block;margin-top:11px">尺码</span>
+        <ul>
+            <li>S</li>
+            <li>M</li>
+            <li>L</li>
+            <li>XL</li>
+            
+        </ul>
+    
+    </div>
+
+</div>
+<script>
+$(".box3 ul li").click(function(){
+	
+	$(this).css({"border":"1px solid red"}).addClass("sj").siblings().css({"border":"1px solid #ccc"});
+	$(".imgs").hide();
+	$(this).find(".imgs").show();
+	
+	})
+$(".box4 ul li").click(function(){
+	var q=$(this).index();
+   $(".box2  ul li").eq(q).show().siblings(".box2  ul li").hide();
+	$(this).css({"border":"1px solid red"}).addClass("sj").siblings().css({"border":"1px solid #ccc"}).removeClass("sj");
+})
+
+
+</script>
+
+
+</body>
+</html>

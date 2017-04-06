@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<style>
+.shangpin{width:900px;height:350px;background:#ccc;margin:100px auto;}
+.sp{width:33.2%;margin-right:0.1%;height:100%;background:#fff;float:left;}
+.sp img{width:80%;margin-left:10%;margin-top:20px;}
+.sp p{margin-left:10%;}
+.sp input{margin-left:10%;}
+.che{position:absolute;left:1200px;top:50px;}
+</style>
+
+</head>
+<body>
+<div class="che"><img src="img/che.png"></div>
+<div class="shangpin">
+	<div class="sp">
+    	<img src="img/1.jpg">
+        <p>价格：<em>￥998</em></p>
+        <input type="button" value="添加到购物车" class="addsp">
+    </div>
+	<div class="sp">
+    	<img src="img/2.jpg">
+        <p>价格：<em>￥668</em></p>
+        <input type="button" value="添加到购物车" class="addsp">
+    </div>
+	<div class="sp">
+    	<img src="img/3.jpg">
+        <p>价格：<em>￥778</em></p>
+        <input type="button" value="添加到购物车" class="addsp">
+    </div>
+
+</div>
+<script>
+$('.addsp').click(function(){
+	//alert(13);
+	var che=$('.che');
+	var spsp=$(this).parent('.sp').find('img').eq(0);
+	if(spsp){
+		spsp.clone()
+		.offset({
+			top:spsp.offset().top,
+			left:spsp.offset().left
+			})
+		.css({
+			"position":"absolute",
+			"width":"150px",
+			"height":"150px",
+			"opacity":"0.5"
+			})
+		.appendTo($('body'))
+		.animate({
+			"width":"60px",
+			"height":"60px",
+			top:che.offset().top+10,
+			left:che.offset().left+10
+			},1000,'easeInOutExpo')
+		.animate({
+			"width":0,
+			"height":0,
+			},function(){
+				$(this).detach();
+				});
+			setTimeout(function(){//多少秒之后执行
+				che.effect('shake',{times:2});//（使用的特效、特效设置、）bounce：上下跳/shake：左右抖
+				},1500);
+		}
+	
+	
+	
+	})
+
+
+
+</script>
+
+</body>
+</html>

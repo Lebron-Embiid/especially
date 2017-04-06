@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery-2.1.1.js"></script>
+<style>
+.box{width:900px;height:420px;background:#CF0;margin:100px auto; position:relative;}
+.box img{position:absolute;}
+ul{ list-style:none;position:absolute;bottom:10px;left:30%}
+.box ul li{width:60px;height:30px;margin-left:10px;float:left;}
+.ys{border:2px solid #F03;margin-top:-5px}
+
+</style>
+</head>
+
+<body>
+<div class="box">
+	<img src="1.png"/>
+    <img src="2.png"/>
+    <img src="3.png"/>
+    <img src="4.png"/>
+    <ul>
+    	<li class="ys"><img src="1.png" style="width:60px;height:30px;"/></li>
+        <li><img src="2.png" style="width:60px;height:30px;"/></li>
+        <li><img src="3.png" style="width:60px;height:30px;"/></li>
+        <li><img src="4.png" style="width:60px;height:30px;"/></li>
+    </ul>
+    
+<script>
+//焦点图切换
+$(".box ul li").mouseover(function(){
+	//清除计时器，停止轮播
+	clearInterval(times);
+	//划上当前里LI添加背景颜色，其余移除背景颜色；
+	$(this).addClass("ys").siblings().removeClass("ys");
+	//划上获取当前索引值；
+	var u=$(this).index();
+	//划上当前LI匹配对应图片，其余图片隐藏；
+	$(".box img").eq(u).show().siblings(".box img").hide();
+	})
+//划上图片清除计时器，划离启动计时器
+$(".box").hover(function(){
+	clearInterval(times);
+	
+	},function(){
+		
+		autoplay();
+		
+		})
+	//自动轮播
+	var r=0;
+function autoplay(){
+	 times= setInterval(function(){
+		if(r>=3){r=0}
+		else{r++}
+		$(".box ul li").eq(r).addClass("ys").siblings().removeClass("ys");
+		$(".box img").eq(r).show().siblings(".box img").hide();
+		},1500)
+	}
+autoplay();
+
+</script>
+</body>
+</html>

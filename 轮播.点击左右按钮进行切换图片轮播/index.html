@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+*{margin:0;padding:0;}
+.Box{
+	width:1356px;
+	height:368px;
+	position:relative;
+	overflow:hidden;
+	}
+.wrapperbox{
+	width:8136px;
+	height:368px;}
+img{display:block;}
+.wrapperbox img{float:left;width:1356px;height:368px;}
+.Box ul{margin-top:0;padding:0;position:absolute;bottom:10px;left:50%;}
+.Box ul li{list-style:none;width:12px;background-color:#FF0;float:left;text-align:center;line-height:12px;color:black;border-radius:12px;font-size:6px;margin-left:10px;}
+.Box ul .currentli{background-color:#F0F;}
+.anz{width:30px;height:52px; position:absolute;left:15px;top:160px;}
+.any{width:30px;height:52px; position:absolute;right:15px;top:160px;}
+
+</style>
+<script src="include/Js/jquery-2.1.1.js"></script>
+</head>
+<body>
+<div class="Box">
+	<div class="wrapperbox">
+    	<img src="include/Images/1.jpeg">
+        <img src="include/Images/2.jpeg">
+        <img src="include/Images/3.jpeg">
+        <img src="include/Images/4.jpeg">
+        <img src="include/Images/5.jpeg">
+        <img src="include/Images/1.jpeg">
+    </div>
+    <ul id="xs">
+    	<li class="currentli">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div class="anz"><img src="include/Images/zuo.jpg"></div>
+    <div class="any"><img src="include/Images/you.jpg"></div>
+</div>
+<script>
+var n=0;
+var times = null;
+
+$('#xs').find('li').bind('mouseover',function()
+{	
+	n = $('#xs').find('li').index(this);
+	$('.wrapperbox').stop().animate({marginLeft:-1356*n},600);
+	$('#xs').find('li').removeClass('currentli');
+	$('#xs').find('li').eq(n).addClass('currentli');	
+})
+$(".any").bind("click",function()
+{
+	if(n<5)
+		{
+			n+=1;
+		}
+		else
+		{
+			$('.wrapperbox').css('marginLeft','0px');
+			n=1;			
+		}
+		$('.wrapperbox').animate({marginLeft:-1356*n},500);
+		$('#xs').find('li').removeClass('currentli');
+		if(n==$('.wrapperbox').find('img').length-1)
+		{
+			$('#xs').find('li').eq(0).addClass('currentli');		
+		}
+		else
+		{
+			$('#xs').find('li').eq(n).addClass('currentli');
+		}	
+			
+})
+$(".anz").bind("click",function()
+{
+	if(n>0)
+		{
+			n-=1;
+		}
+		else
+		{
+			$('.wrapperbox').css('marginRight','0px');
+			n=4;			
+		}
+		$('.wrapperbox').animate({marginLeft:-1356*n},500);
+		$('#xs').find('li').removeClass('currentli');
+		if(n==$('.wrapperbox').find('img').length-1)
+		{
+			$('#xs').find('li').eq(0).addClass('currentli');		
+		}
+		else
+		{
+			$('#xs').find('li').eq(n).addClass('currentli');
+		}	
+			
+})
+autoPlay();
+$('.Box').bind('mouseover',function()
+{
+	clearInterval(times);		
+})
+$('.Box').bind('mouseleave',function()
+{
+	
+	autoPlay();	
+})
+function autoPlay()
+{
+	times = setInterval(function()
+	{
+		if(n<5)
+		{
+			n+=1;
+		}
+		else
+		{
+			$('.wrapperbox').css('marginLeft','0px')
+			n=1;			
+		} 
+		$('.wrapperbox').animate({marginLeft:-1356*n},500);
+		$('#xs').find('li').removeClass('currentli');
+		if(n==$('.wrapperbox').find('img').length-1)
+		{
+			$('#xs').find('li').eq(0).addClass('currentli');		
+		}else
+		{
+			$('#xs').find('li').eq(n).addClass('currentli');
+		}
+		
+	},3000)	
+}
+
+</script>
+</body>
+</html>

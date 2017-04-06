@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0px;padding:0px;}
+#con{width:700px;height:400px;background-color:#0FF;margin:0 auto;}
+#tit{width:100%;height:50px;background:#F0F;position:relative;}
+ul{list-style:none;}
+li{float:left;background:#FF0;height:50px;line-height:50px;text-align:center;width:80px;}
+p.line{padding:2px;width:80px;background:#00F;position:absolute;top:48px;}
+.ys{color:#00F;}
+.contents{width:100%;height:350px;background:#FF0;display:none;}
+</style>
+<script src="jquery-2.1.1.js"></script>
+</head>
+
+<body>
+<div id="con">
+	<div id="tit">
+    	<ul>
+        	<li class="ys">首页</li>
+            <li>新闻</li>
+            <li>精品展示</li>
+        </ul>
+        <p class="line"></p>
+    </div>
+    <div class="contents" style="display:block;">how</div>
+    <div class="contents">are</div>
+    <div class="contents">you</div>
+</div>
+<script>
+$("li").hover(function(){
+	var i = $(this).position().left;
+	$("p").stop();
+	$("p").animate({left:i},200);
+	var index = $(this).index();
+	
+	$(this).addClass("ys").siblings().removeClass("ys");
+	$(".contents").eq(index).show().siblings(".contents").hide();
+	});
+</script>
+</body>
+</html>

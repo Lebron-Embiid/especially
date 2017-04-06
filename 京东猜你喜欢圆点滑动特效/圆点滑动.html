@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery-2.1.1.js">
+
+
+</script>
+<style>
+.boxs{width:1200px;height:200px;}
+.box{width:1200px;height:600px;border: 1px solid #999;margin-top:100px; position:relative; }
+.box1{ width:107px;height:5px;position:absolute;top:-3px;left:0;display:none}
+.xian{width:100px;border:1px solid red;margin-top:1px;float:left}
+.yd{width:3px;height:3px;background:red; border-radius:10px;border:1px solid red;float:left}
+</style>
+</head>
+
+<body>
+<div class="boxs"><img src="123.png"/></div>
+<div class="box">
+	<img src="123.png"/>
+	<div class="box1">
+        <div class="xian"></div>
+        <div class="yd"></div>
+    </div>
+</div>
+<script>
+$(window).scroll(function(){
+	var top=$(this).scrollTop();
+	if(top>=200){
+		$(".box1").show();
+		$(".box1").stop().animate({
+			left:1094,
+			},1000)
+		}
+	else{
+		
+		$(".box1").hide().css("left","0");
+		}
+	})
+</script>
+</body>
+</html>

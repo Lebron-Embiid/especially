@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/jquery.1.4.2-min.js"></script>
+<style>
+*{margin:0;left:0}
+.box{width:170px;height:120px;margin:100px auto;border:1px solid #fff;background-image:url(02.png)no-repeat -170px 0;position:relative}
+.bj{width:170px;height:120px;background-image:url(shine_brands.png);position:absolute;left:-172px}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<img src="01.jpg"><span class="bj"></span>
+</div>
+<script>
+$(".box").hover(function(){
+	$(".bj").css("display","block").stop().animate({left:172,top:0},500)
+	
+	
+	},function(){
+		
+		$(".bj").css("display","none").stop().animate({left:-172,top:0},500)
+		
+		})
+
+
+
+</script>
+</body>
+</html>

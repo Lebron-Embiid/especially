@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+<meta  charset="utf-8" />
+<title></title>
+<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="css/inside.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+<div id="advance_banner">为二手车代言</div>
+<div class="empty-placeholder hidden"></div>
+<div id="subNav">
+  <ul class="wrap">
+    <li class="adv_active"><a href="#hall_show" class="adv_door adv_active"><ins></ins>二手车旗舰店<span></span></a></li>
+    <li><a href="#checkCar" class="adv_source"><ins></ins>车源保证<span></span></a></li>
+    <li><a href="#alpha_price" class="adv_price"><ins></ins>价格透明<span></span></a></li>
+    <li><a href="#service_show" class="adv_transfer"><ins></ins>过户便捷<span></span></a></li>
+    <li><a href="#pay_show" class="adv_payment"><ins></ins>分期付款<span></span></a></li>
+    <li><a href="#quality_promise" class="adv_promise"><ins></ins>售后质保<span></span></a></li>
+  </ul>
+</div>
+<!--hall_show-->
+<div id="hall_show" class="wrap">
+  <div class="show_title">
+    <h1>二手车旗舰店</h1>
+  </div>
+  <p>国内首家品牌二手车旗舰店，<ins>20000平米展馆</ins>，人性化设计，宽敞的车辆展示空间，360度无死角看车；独立交易室，购车安全感倍增；设有儿童区、免费水吧，让您不只是买卖车辆，更享受星级服务。位于北京市海淀区远大路1号金源购物中心，10号线直达，交通便捷。</p>
+  <ul class="hallImg_show clearfix">
+    <li><img alt="大搜车，二手车，展馆，洽谈室" src="images/hall1.jpg" /></li>
+    <li><img alt="大搜车，二手车，展馆，接待区" src="images/hall2.jpg" /></li>
+    <li><img alt="大搜车，二手车，展馆，儿童区" src="images/hall3.jpg" /></li>
+    <li><img alt="大搜车，二手车，展馆，旗舰式展厅" src="images/hall4.jpg" /><ins>国际会展设施  可同时容纳超过700辆车</ins></li>
+    <li><img alt="大搜车，二手车，夜店，晚上22:00点" src="images/hall5.jpg" /><ins>首创“夜店”模式  营业至晚间22:00<br/>
+      为繁忙都市人提供灵活便捷的购车时间</ins></li>
+  </ul>
+</div>
+<!--hall_show end--> 
+<div id="footer">
+  <div class="footer-content">
+    <div class="wrapper">
+      <div class="performance clearfix">
+        <div class="per-1 per"><a target="_blank" href="http://www.sucaijiayuan.com"><i></i>
+          <div class="t">绝无火烧车，水淹车</div>
+          <div class="st">356项质检，保证车辆品质</div>
+          </a> </div>
+        <div class="per-2 per"><a target="_blank" href="http://www.sucaijiayuan.com"><i></i>
+          <div class="t">1年2万公里质保</div>
+          <div class="st">二手车享受新车质保服务</div>
+          </a> </div>
+        <div class="per-3 per"><a target="_blank" href="http://www.sucaijiayuan.com"><i></i>
+          <div class="t">分期付款</div>
+          <div class="st">提供最长3年分期付款服务</div>
+          </a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script>
+$(function(){
+	$(window).scroll(function(){
+		var $this = $(this);
+		var targetTop = $(this).scrollTop();//scrollTop() 方法返回或设置匹配元素的滚动条的垂直位置
+		var footerTop = $("#footer").offset().top;//offset() 方法返回或设置匹配元素相对于文档的偏移（位置）
+		var height = $(window).height();
+		
+		if (targetTop >= 520){
+			$("#subNav").addClass("fixedSubNav");//addClass() 方法向被选元素添加一个或多个类
+			$(".empty-placeholder").removeClass("hidden");//removeClass() 方法从被选元素移除一个或多个类
+		}else{
+			$("#subNav").removeClass("fixedSubNav");
+			$(".empty-placeholder").addClass("hidden");
+		}
+	})
+});
+</script>
+</body>
+</html>

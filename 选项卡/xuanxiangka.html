@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="include/Js/jquery-2.1.1.js"></script>
+<style>
+*{margin:0px;padding:0px;}
+.bk{width:750px;height:450px;margin:0 auto}
+.bks{width:100%;height:40px;border-bottom:1px solid #ddd;position:relative;text-align:center}
+ul{ list-style:none}
+.bks ul li{width:80px;line-height:40px;float:left;font-size:14px;}
+a{ text-decoration:none; color:#000}
+.line{width:80px;height:2px;background:#33F; position:absolute;left:0px;top:40px;}
+.bkx{width:100%;height:410px;display:none;}
+.ys{color:#188eee}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+<div class="bk">
+	<div class="bks">
+    	<ul>
+        	<li><a href="#" class="ys">推荐</a></li>
+            <li><a href="#">前端开发</a></li>
+            <li><a href="#">后台开发</a></li>        
+        </ul>
+    	<p class="line"></p>
+    </div>
+    <div class="bkx" style="display:block"><img src="include/Images/1.png"></div>
+    <div class="bkx"><img src="include/Images/2.png"></div>
+    <div class="bkx"><img src="include/Images/3.png"></div>
+</div> 
+<script>
+$(".bks ul li").hover(function(){
+	var l = $(this).position().left;
+	//$(".line").stop();
+	$(".line").stop().animate({left:l},200)
+	var u = $(this).index();
+	//siblings() 获得匹配集合中每个元素的同胞，通过选择器进行筛选是可选的。
+	//:eq() 选择器选取带有指定 index 值的元素。index 值从 0 开始，所有第一个元素的 index 值是 0（不是 1）
+	$(".bkx").eq(u).show().siblings(".bkx").hide(); 
+	//parent() 获得当前匹配元素集合中每个元素的父元素，使用选择器进行筛选是可选的。
+	$(this).find("a").css("color","#188eee").parent().siblings().find("a").css("color","#000");
+	<!--$(this).find("a").addClass("ys");-->
+	});
+</script>
+
+
+
+
+</body>
+</html>

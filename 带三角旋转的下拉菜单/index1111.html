@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery-2.1.1.js"></script>
+<style>
+*{padding:0;margin:0}
+img{border:0}
+.box{width:140px;height:190px;margin:100px auto;}
+.box1{width:140px;height:40px;line-height:40px;text-align:center;border:1px solid #CCC}
+.box1 span{width:100px;height:40px;float:left;}
+/*transition:过渡属性     0.2s 过渡时间*/
+.sj{float:left;width:20px;height:40px;transition:0.2s}
+.box2{width:100%;height:140px;background:#FC3;display:none}
+ul{list-style:none}
+.box ul li{width:100%;line-height:40px;margin-top:10px;background:#06F;text-align:center;}
+/*三角旋转180度；transform： 旋转*/
+.box1:hover .sj{transform:rotate(180deg)}
+</style>
+</head>
+
+<body>
+<div class="box">
+	<div class="box1"><span>一级菜单</span><div class="sj">△</div></div>
+    <div style="clear:both"></div>
+	<div class="box2">
+    	<ul>
+        	<li style="margin-top:0px">二级菜单</li>
+        	<li>二级菜单</li>
+            <li>二级菜单</li>
+        
+        </ul>
+    
+    </div>
+</div>
+<script>
+$(".box1").mouseover(function(){
+	$(".box2").show();
+	})
+$(".box").mouseleave(function(){
+	$(".box2").hide();
+	})
+</script>
+</body>
+</html>

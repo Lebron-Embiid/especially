@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+<script src="jquery-2.1.1.js"></script>
+<style>
+.dh ul li{width:100px;line-height:50px;border:2px dashed #fff;font-weight:bold;background:#fff}
+a{ text-decoration:none}
+</style>
+</head>
+
+<body>
+<div  id="a" style="width:100%;height:600px;background:red"></div>
+<div  id="b" style="width:100%;height:600px;background:blue"></div>
+<div  id="c" style="width:100%;height:600px;background:green"></div>
+<div  id="d" style="width:100%;height:600px;background:yellow"></div>
+<div  id="e" style="width:100%;height:600px;background:black"></div>
+<div  style="dispaly:none;top:100px;left:20px; text-align:center; position:fixed" class="dh">
+	<ul style=" list-style:none">
+    	<li class="q"><a href="#a">red</a></li>
+        <li class="w"><a href="#b">blue</a></li>
+        <li  class="r"><a href="#c">green</a></li>
+        <li  class="t"><a href="#d">yellow</a></li>
+        <li class="p"><a href="#e">black</a></li>
+     </ul>
+</div>
+<script>
+ $(window).scroll(function(){
+		var u=$(this).scrollTop();
+		if(u>=400){
+			$(".dh").show();
+			}
+		else{
+			$(".dh").hide();
+			}
+		var q=$(this).scrollTop();
+		if( q>=600 && q<1200){
+			$(".w").css("background","blue");
+			}
+		else{
+			$(".w").css("background","#fff");
+			}
+		var z=$(this).scrollTop();
+		if( z>=1200 && z<1800){
+			$(".r").css("background","green");
+			}
+		else{
+			$(".r").css("background","#fff");
+			}
+		})
+</script>
+</body>
+</html>
+

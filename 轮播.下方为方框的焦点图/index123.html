@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="include/Js/jquery-2.1.1.js"></script>
+<style>
+*{margin:0;padding:0;}
+.con{width:438px;height:234px;margin:0 auto; position:relative;overflow:hidden;}
+.con1{width:438px;height:234px; position:relative; width:1000%; }
+.con1 img{width:438px;height:234px;float:left;}
+.jd{ position:absolute;bottom:10px;left:30%; list-style:none}
+.jd li{float:left;width:34px;height:12px;background:#CF0;font-size:12px;text-align:center;margin-left:4px; cursor:pointer;}
+.jd .jdli{background-color:#f00;}
+</style>
+</head>
+<body>
+<div class="con">
+	<div class="con1">
+            <img src="include/Images/1.jpg"/>
+            <img src="include/Images/2.jpg"/>
+            <img src="include/Images/3.jpg"/>
+            <img src="include/Images/4.jpg"/>
+   </div>
+   <div class="anz"><img src="include/Images/zuo.jpg"/></div>
+   <div class="any"><img src="include/Images/you.jpg"/></div> 
+   <ul class="jd">
+    	<li class="jdli">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+   </ul>
+ <script>
+
+	$('.jd').find('li').bind('mouseover',function(){
+		var n = $('.jd').find('li').index(this);
+		$('.con1').stop().animate({marginLeft:-438*n},600);
+		$('.jd').find('li').removeClass('jdli');
+		
+		$('.jd').find('li').eq(n).addClass('jdli');	
+		})
+</script>
+</div>
+
+
+</body>
+</html>

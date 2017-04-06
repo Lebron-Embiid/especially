@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery-2.1.1.js"></script>
+<style>
+*{padding:0;margin:0}
+.ycdh{width:35px;height:200px;background:#fff; border-radius:5px 0 0 5px;position:fixed;right:0;top:260px;z-index:10000}
+.ycdhl{width:35px;height:30px;background:#7b6f6f;margin-top:4px; position:relative;}
+.ycdhl img{height:20;width:25px;margin-left:5px;margin-top:3px;  position:relative;z-index:6666}
+.ycdhx{width:80px;line-height:30px;position:absolute;top:0;right:-80px;border-radius:5px 0 0 5px;text-align:center;background:#7b6f6f;}
+</style>
+</head>
+
+<body style="background:#ccc">
+	<div class="ycdh">
+    	<div class="ycdhl" style="margin-top:0px;">
+        	<img src="1.png">
+        	<div class="ycdhx">京东会员</div>
+            
+        </div>
+        <div class="ycdhl">
+        	<img src="2.png">
+            <div class="ycdhx">购物车</div>
+        </div>
+        <div class="ycdhl">
+        	<img src="3.png">
+            <div class="ycdhx">我的关注</div>
+        </div>
+        <div class="ycdhl">
+        	<img src="4.png">
+            <div class="ycdhx">我的足迹</div>
+        </div>
+        <div class="ycdhl">
+        	<img src="5.png">
+            <div class="ycdhx">我的消息</div>
+        </div>
+        <div class="ycdhl">
+        	<img src="6.png">
+            <div class="ycdhx">咨询</div>
+        </div>
+    </div>
+    <script>
+    $(".ycdhl").hover(function(){
+		var u=$(this).index();
+		$(".ycdhx").eq(u).css({"display":"block",}).stop().animate({
+			left:-80,
+			},600);
+		},function(){
+			$(".ycdhx").stop().animate({
+			left:80,
+			},600);
+			})
+    </script>
+</body>
+</html>

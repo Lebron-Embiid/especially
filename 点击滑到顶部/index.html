@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head lang="en"><title>点击跳转到顶部</title></head>
+<meta charset="utf-8">
+
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<style>
+.con{width:800px;height:2000px;background:#ccc;margin:0 auto;}
+.shang{width:80px;height:80px;background:#ddd;boeder:1px solid #ccc;position:fixed;top:450px;right:100px;display:none;line-height:80px;text-align:center; cursor: pointer;}
+
+</style>
+<body>
+
+<div  class="con">顶部</div>
+
+
+<div  class="shang">↑↑↑↑↑</div>
+</body>
+<script type="text/javascript">
+$(function(){
+window.onscroll=function(){
+	if($('body').scrollTop()>=100){
+	$('.shang').css('display','block');
+
+	}else{$('.shang').css('display','none');}
+}
+$('.shang').click(function(){
+	$('body').animate({scrollTop:0},500)
+
+
+
+})
+
+
+
+
+})
+
+
+</script>
+
+
+
+
+
+
+</html>

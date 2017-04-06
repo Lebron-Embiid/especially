@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+*{ margin:0; padding:0; list-style:none;}
+img{ border:0;}
+#divs{ width:460px; height:500; margin:150px auto; }
+#divs li{ width:218px; height:155px; position:relative;float:left}
+#divs li img{ position:absolute; left:0; top:0;width:218px; height:155px; }
+</style>
+</head>
+<body>
+<div id="divs">
+	<ul>
+    	<li><img src="include/Images/lanren01.jpg"/></li>
+        <li><img src="include/Images/lanren02.jpg"/></li>
+        <li><img src="include/Images/lanren03.jpg"/></li>
+        <li><img src="include/Images/lanren04.jpg"/></li>
+    </ul>
+</div>
+<script src="include/Js/jquery-2.1.1.js"></script>
+<script>
+$(function(){
+	var k = 218;
+	var g = 155; 
+	$('#divs li').hover(function(){
+		$(this).css("z-index","100").siblings().css("z-index","1")
+		//stop()停止当前正在运行画面
+		//animate() 方法执行 CSS 属性集的自定义动画
+		$(this).find('img').stop().animate({
+			left:'-10',
+			top:'-10',
+			width:k+20,
+			height:g+20,
+			
+		},500);
+		
+	 	
+	},
+	//返回原画面
+	function(){
+		$(this).find('img').stop().animate({
+			left:'0',
+			top:'0',
+			width:k,
+			height:g,
+		},500);
+	});
+});
+</script>
+<!-- 代码部分end -->
+</body>
+</html>

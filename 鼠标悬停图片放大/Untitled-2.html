@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="jquery-2.1.1.js"></script>
+<style>
+.box{width:218px;height:155px;border:1px solid #CF3;margin:100px auto; overflow:hidden;position:relative}
+.box img{ position:absolute}
+
+</style>
+</head>
+<body>
+<div class="box"><img src="lanren01.jpg"></div>
+<script>
+$(".box").hover(function(){
+	//animate() 自定义动画效果
+	//stop()   停止当前动画效果
+	$(".box img").stop().animate({
+		width:218+20,
+		height:155+20,
+		top:-10,
+		left:-10,
+		},500)
+	},function(){
+		$(".box img").stop().animate({
+		width:218,
+		height:155,
+		top:0,
+		left:0,
+		},500)
+		})
+</script>
+</body>
+</html>

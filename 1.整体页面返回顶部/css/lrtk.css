@@ -1,0 +1,6 @@
+*{ padding:0px; margin:0px;}
+#tbox{width:47px; height:73px; float:right; position:fixed;}
+#gotop{ width:47px; height:47px; background:url(../images/top01.png) no-repeat; position:absolute; top:0px; display:none; cursor:pointer} 
+#gotop:hover{ background:url(../images/top02.png) no-repeat;}
+
+

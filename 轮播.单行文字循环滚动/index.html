@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title></title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<style>
+*{ padding:0; margin:0; font-size:12px}
+ul,li{ list-style:none;}
+.box{ height:35px; background:#000; overflow:hidden;}
+.t_news{ height:19px; background:url(../images/icon_top.png) 0 -88px no-repeat; color:#fff; padding-left:10px; margin:8px 0; overflow:hidden; position:relative;}
+.t_news b{ line-height:19px; font-weight:bold; display:inline-block;}
+.news_li,.swap{ line-height:19px; display:inline-block; position:absolute; top:0; left:72px;}
+.news_li a,.swap a{ color:#fff;}
+.swap{top:19px;}
+</style>
+<script>
+function b(){	
+	t = parseInt(x.css('top'));
+	y.css('top','19px');	
+	x.animate({top: t - 19 + 'px'},'slow');	//19为每个li的高度
+	if(Math.abs(t) == h-19){ //19为每个li的高度
+		y.animate({top:'0px'},'slow');
+		z=x;
+		x=y;
+		y=z;
+	}
+	setTimeout(b,3000);//滚动间隔时间 现在是3秒
+}
+$(document).ready(function(){
+	$('.swap').html($('.news_li').html());
+	x = $('.news_li');
+	y = $('.swap');
+	h = $('.news_li li').length * 19; //19为每个li的高度
+	setTimeout(b,3000);//滚动间隔时间 现在是3秒
+	
+})
+</script>
+</head>
+<body>
+
+<div class="box">
+	<div class="t_news">
+		<b>最新动态：</b>
+		<ul class="news_li">
+			<li><a href="#" target="_blank">习近平:让民众在公安执法中感到正义 国平 学习时刻</a></li>
+			<li><a href="#" target="_blank">习近平再释“第四种自信” 为传统文化代言 治国理政</a></li>
+			<li><a href="#" target="_blank">李克强：我们要央企干什么？ 不是和民企抢饭碗</a></li>
+			<li><a href="#" target="_blank">人民日报:蔡英文是否走动荡老路 我们拭目以待</a></li>
+			<li><a href="#" target="_blank">中方回应美基金会资助百余反华团体:将依法处理</a></li>
+		</ul>
+        <ul class="swap"></ul>
+	</div>
+</div>
+</body>
+</html>

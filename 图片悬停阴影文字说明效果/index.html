@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<title></title>
+
+<link href="css/index.css" type="text/css" rel="stylesheet" />
+<script src="js/jquery.min.js"></script>
+<script src="js/griddler.1.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+		$('#demo').Griddler();
+		var width = $(window).width();
+		$('#nav').css('width', (width-223));
+    });
+</script>
+</head>
+
+<body>
+<div id="demo_wrapper">
+  <ul id="demo">
+    <li> <a href="#" class="lightbox"><img src="images/img_12_lg.jpg" /></a>
+      <div class="project_info">
+        <h2>这是win10</h2>
+      </div>
+    </li>
+  </ul>
+</div>
+</body>
+</html>
